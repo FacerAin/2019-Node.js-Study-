@@ -8,16 +8,16 @@ fs.readFile('./4.Modules/input.txt', (err, data) => {
     arr_cal = input_txt.split(',')
     switch (arr_cal[1]) {
         case '+':
-            result = Number(arr_cal[0]) + Number(arr_cal[2])
+            result = calc.add(Number(arr_cal[0]),Number(arr_cal[2]))
             break;
         case '-':
-            result = Number(arr_cal[0]) - Number(arr_cal[2])
+            result = calc.subtract(Number(arr_cal[0]),Number(arr_cal[2]))
             break;
         case '*':
-            result = Number(arr_cal[0]) * Number(arr_cal[2])
+            result = calc.multiply(Number(arr_cal[0]),Number(arr_cal[2]))
             break;
         case '/':
-            result = Number(arr_cal[0]) / Number(arr_cal[2])
+            result = calc.divide(Number(arr_cal[0]),Number(arr_cal[2]))
             break;
     }
     fs.writeFile('./4.Modules/output.txt', result, (err) => {
